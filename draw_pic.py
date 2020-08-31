@@ -40,3 +40,19 @@ ax_2.set_zlabel('LCOE')
 # ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='rainbow')
 
 plt.savefig('lcoe_pic_2.jpg')
+
+data_frame_3 = pd.read_excel('LCOE_data.xls',sheet_name='organized_data')
+# print (data_frame[])
+x_3 = data_frame_3['发电能力']
+y_3 = data_frame_3['总投资']
+z_3 = data_frame_3['LCOE']
+ax_3 = plt.subplot(111, projection='3d')
+ax_3.scatter(x_3, y_3, z_3, c='r')
+
+ax_3.set_xlabel('Generating capacity')
+ax_3.set_ylabel('Total investment')
+ax_3.set_zlabel('LCOE')
+
+# ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='rainbow')
+
+plt.savefig('lcoe_pic_3.jpg')
